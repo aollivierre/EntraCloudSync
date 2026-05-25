@@ -1,4 +1,4 @@
-﻿# Script to restore NTLM settings and RDP access
+# Script to restore NTLM settings and RDP access
 function Restore-NTLMAndRDP {
     Write-Host "Restoring NTLM and RDP Security Settings..." -ForegroundColor Yellow
     
