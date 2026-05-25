@@ -1,4 +1,4 @@
-﻿# Microsoft Entra Cloud Sync Prerequisites Diagnostic Script
+# Microsoft Entra Cloud Sync Prerequisites Diagnostic Script
 # This script checks all requirements for running Cloud Sync agent on Windows Server
 
 function Write-CheckResult {
@@ -8,7 +8,7 @@ function Write-CheckResult {
         [string]$Details = ""
     )
     
-    $status = if ($Result) { "✅ PASS" } else { "❌ FAIL" }
+    $status = if ($Result) { "[DONE] PASS" } else { "[ERROR] FAIL" }
     Write-Host "`n[$status] $Check"
     if ($Details) {
         Write-Host "     Details: $Details"
@@ -301,9 +301,9 @@ Write-CheckResult -Check "Proxy Configuration for Microsoft Services" -Result $p
 
 Write-Host "`n======================================================`n"
 if ($allChecksPass) {
-    Write-Host "✅ All prerequisite checks passed!" -ForegroundColor Green
+    Write-Host "[DONE] All prerequisite checks passed!" -ForegroundColor Green
 } else {
-    Write-Host "❌ Some checks failed. Please review the results above and address any failing checks." -ForegroundColor Red
+    Write-Host "[ERROR] Some checks failed. Please review the results above and address any failing checks." -ForegroundColor Red
 }
 
 Write-Host "`nRemediation Steps for Failed Checks:"

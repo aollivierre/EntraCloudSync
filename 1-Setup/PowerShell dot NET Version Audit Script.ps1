@@ -1,4 +1,4 @@
-﻿# Script to audit all versions of .NET installed
+# Script to audit all versions of .NET installed
 # Create an empty array to store results
 $results = @()
 
