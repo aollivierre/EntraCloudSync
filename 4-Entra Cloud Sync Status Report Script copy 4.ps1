@@ -33,8 +33,8 @@ function Start-EntraCloudSyncWithReport {
                 'Job Type' = $job.templateId
                 'Agent ID' = ($job.id -split '\.')[-1]
                 'Direction' = switch -Wildcard ($job.templateId) {
-                    'AAD2AD*' { 'Entra ID → Active Directory' }
-                    'AD2AAD*' { 'Active Directory → Entra ID' }
+                    'AAD2AD*' { 'Entra ID -> Active Directory' }
+                    'AD2AAD*' { 'Active Directory -> Entra ID' }
                     default { 'Unknown' }
                 }
                 'Status' = $status.lastRun_state
